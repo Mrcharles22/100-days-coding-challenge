@@ -35,7 +35,7 @@ body {
 
 .navigation__link:hover {
     /* Move the text to the center on hover */
-    color: #ffffff;
+    color: teal;
     -webkit-text-stroke: 1px #212121;
     transform: translateX(0);
     transition: color 0.25s, -webkit-text-stroke 0.25s, transform 0.5s; /* Adjusted transitions */
@@ -43,13 +43,13 @@ body {
 
 .navigation__link:hover::before {
     transform: translate(12px, -12px);
-    color: #ff7490;
+    color: coral;
     -webkit-text-stroke: 1px #212121;
 }
 
 .navigation__link:hover::after {
     transform: translate(24px, -24px);
-    color: #7ae0ee;
+    color: gold;
     -webkit-text-stroke: 1px #212121;
 }
 
