@@ -1,0 +1,71 @@
+/* Import Google font - Poppins */
+/* Import the Poppins font from Google Fonts API to be used throughout the document. */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+    /* Apply global styles to reset margin, padding, and use the Inter font as the default. */
+  }
+  
+  body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e0e3eb;
+    /* Set up the body element with flex properties to center its content, and a background color. */
+  }
+  
+  .container {
+    position: relative;
+    max-width: 300px;
+    width: 100%;
+    border-radius: 12px;
+    padding: 10px 20px 20px;
+    background: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+    /* Style for a container with rounded corners, a maximum width, padding, and a subtle box shadow. */
+  }
+  
+  .display {
+    height: 80px;
+    width: 100%;
+    outline: none;
+    border: none;
+    text-align: right;
+    margin-bottom: 10px;
+    font-size: 25px;
+    color: #000e1a;
+    pointer-events: none;
+    /* Styling for a display area with fixed height, right-aligned text, and disabled pointer events. */
+  }
+  
+  .buttons {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    /* Create a grid layout for buttons with defined column layout and grid gap. */
+  }
+  
+  .buttons button {
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #eee;
+    /* Style for buttons with padding, rounded corners, cursor pointer, and a background color. */
+  }
+  
+  .buttons button:active {
+    transform: scale(0.99);
+    /* Provide a visual feedback by scaling down the button slightly when it is active (pressed). */
+  }
+  
+  .operator {
+    color: gold;
+    /* Color style specifically for operator elements, using a shade of blue. */
+  }
+  
