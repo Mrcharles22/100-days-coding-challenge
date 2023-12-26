@@ -1,0 +1,68 @@
+/* Resetting default margin, padding, and box-sizing for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styling for the body */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: teal;
+}
+
+/* Styling for the gallery container */
+.gallery {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    transform-style: preserve-3d;
+    /* Applying animation to the gallery for a rotating effect */
+    animation: animate 30s linear infinite;
+    animation-play-state: running;
+}
+
+/* Keyframes for the gallery animation */
+@keyframes animate {
+    0% {
+        transform: perspective(1000px) rotateY(0deg);
+    }
+    100% {
+        transform: perspective(1000px) rotateY(360deg);
+    }
+}
+
+/* Pausing the animation on hover */
+.gallery:hover {
+    animation-play-state: paused;
+}
+
+/* Styling for individual spans (images) in the gallery */
+span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: right;
+    transform-style: preserve-3d;
+    /* Calculating rotation based on index variable (--i) */
+    transform: rotateY(calc(var(--i) * 45deg)) translateZ(400px);
+    /* Adding a reflective effect using -webkit-box-reflect */
+    -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, #0004);
+}
+
+/* Styling for images within the spans */
+span img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    cursor: pointer;
+}
