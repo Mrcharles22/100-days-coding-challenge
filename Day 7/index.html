@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Set the character set and viewport for responsive design -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Set the title of the page -->
+  <title>Day 9 - Product Landing Page for Monster</title>
+
+  <!-- Link to an external stylesheet for styling -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Main section of the page -->
+  <section class="main">
+    <!-- Header section with logo, navigation, and toggle button -->
+    <header>
+      <!-- Link to the homepage with the Monster logo -->
+      <a href="#"><img src="logo.png" class="logo"></a>
+
+      <!-- Toggle button for responsive navigation -->
+      <div class="toggle"></div>
+
+      <!-- Navigation menu with list items -->
+      <ul class="navigation">
+        <li><a href="#">New & Featured</a></li>
+        <li><a href="#">Men</a></li>
+        <li><a href="#">Women</a></li>
+        <li><a href="#">Kids</a></li>
+        <li><a href="#">Sales</a></li>
+        <li><a href="#">Accessories</a></li>
+      </ul>
+
+      
+      <div class="search-box">
+        <i class="fas fa-search"></i>
+        <input type="search" placeholder="search" name="" value="">
+    </div>
+
+    
+</div>
+    </header>
+
+    <!-- Content section with text, a button, and a slider -->
+    <div class="content">
+      <!-- Text content with a heading, span, paragraph, and a button -->
+      <div class="text">
+        <h2>The fear<br>of <span style="font-family: 'Playfair Display', sans-serif; font-style: italic;">being average</span></h2>
+        <p>In the world of fashion and function, Nike jackets reign supreme. With a sleek fusion of cutting-edge tech and style, they embody more than just outerwear; 
+            they're a symbol of athletic prowess and urban cool. From windbreakers to insulated coats, each stitch speaks of quality,
+              a Nike jacket isn't just clothing—it's a statement of innovation and timeless appeal.
+            </p>
+        <a href="#" class="btn">Cop Yours</a>
+      </div>
+
+      <!-- Slider section with three slides, each representing a different drink -->
+      <div class="slider">
+        <div class="slides active" data-drink="blackGreen"><img src="m-3.png"></div>
+        <div class="slides" data-drink="pinkWhite"><img src="m-2.png"></div>
+        <div class="slides" data-drink="whiteBlue"><img src="m-1.png"></div>
+      </div>
+    </div>
+
+    <!-- Footer section with social icons and navigation buttons -->
+    <div class="footer">
+      <!-- Social icons list -->
+      <ul class="sci">
+        <li><a href="#"><ion-icon name="logo-snapchat"></ion-icon></a></li>
+        <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+        <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+      </ul>
+
+      <!-- Navigation buttons for previous and next slides in the slider -->
+      <div class="prevNext">
+        <p>Just Do It</p>
+        <span class="prev"><ion-icon name="chevron-back-outline"></ion-icon></span>
+        <span class="next"><ion-icon name="chevron-forward-outline"></ion-icon></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Script tags for loading Ionicons library and custom JavaScript -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <!-- Custom JavaScript for handling background and image changes on slider button clicks -->
+  <script>
+    function handleBackgroundChange(index) {
+      const mainSection = document.querySelector('.main');
+      const monsterImage = document.querySelector('.slides.active img');
+
+      switch (index) {
+        case 1:
+          mainSection.style.background = 'radial-gradient(circle, rgba(255, 192, 203, 1) 0%, rgba(255, 105, 180, 1) 100%)';
+          monsterImage.src = 'm-2.png';
+          break;
+        case 2:
+          mainSection.style.background = 'radial-gradient(circle, rgba(169, 169, 169, 1) 70%, rgba(0, 128, 1, 1) 100%)';
+          monsterImage.src = 'm-1.png';
+          break;
+        default:
+          mainSection.style.background = 'radial-gradient(circle, rgba(50, 82, 26, 1) 0%, rgba(139, 115, 68, 1) 100%)';
+          monsterImage.src = 'm-3.png';
+      }
+    }
+
+    // Event listeners for handling slider button clicks and changing background and image
+    const prev = document.querySelector('.prev');
+    const next = document.querySelector('.next');
+    let currentIndex = 0;
+
+    prev.addEventListener('click', function () {
+      currentIndex = (currentIndex - 1 + 3) % 3;
+      handleBackgroundChange(currentIndex);
+    });
+
+    next.addEventListener('click', function () {
+      currentIndex = (currentIndex + 1) % 3;
+      handleBackgroundChange(currentIndex);
+    });
+  </script>
+</body>
+
+</html>
