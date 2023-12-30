@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Set character encoding and page title -->
+    <meta charset="UTF-8">
+    <title>Day 12 - Simple Form Validation</title>
+
+    <!-- Include Font Awesome CSS and custom stylesheet -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css'>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <!-- Form for user input with various input fields -->
+    <form id="myForm">
+        <h2>Validation Form</h2>
+        <!-- Full Name input field -->
+        <div class="form-group fullname">
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" placeholder="Enter your full name">
+        </div>
+
+        <!-- Email input field -->
+        <div class="form-group email">
+            <label for="email">Email Address</label>
+            <input type="text" id="email" placeholder="Enter your email address">
+        </div>
+
+        <!-- Password input field with a toggle button for visibility -->
+        <div class="form-group password">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password">
+            <i id="pass-toggle-btn" class="fa-solid fa-eye"></i>
+        </div>
+
+        <!-- Date input field -->
+        <div class="form-group date">
+            <label for="date">Birth Date</label>
+            <input type="date" id="date" placeholder="Select your date">
+        </div>
+
+        <!-- Gender selection dropdown -->
+        <div class="form-group gender">
+            <label for="gender">Gender</label>
+            <select id="gender">
+                <option value="" selected disabled>Select your gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Female">I rather not say</option>
+            </select>
+        </div>
+
+        <!-- Submit button -->
+        <div class="form-group submit-btn">
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+
+    <!-- Content displayed after successful form submission -->
+    <div id="thank-you-content" style="display: none; color: #ffffff" ;>
+        <h1>Form filled correctly 💙</h1>
+    </div>
+
+    <!-- Include JavaScript file for form validation -->
+    <script src="./script.js"></script>
+
+</body>
+
+</html>
