@@ -1,0 +1,200 @@
+/* Apply styles to all elements, resetting margin, padding, and using border-box box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kanit', sans-serif;
+}
+
+/* Styles for the body element */
+body {
+    /* Flex container settings for centering content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Set minimum height to 100% of the viewport height */
+    min-height: 100vh;
+    /* Hide overflow */
+    overflow: hidden;
+    /* Background color */
+    background: grey;
+}
+
+/* Styles for the main container */
+.container {
+    /* Absolute positioning for better control */
+    position: absolute;
+    /* Flex container settings with 3D transformations */
+    display: flex;
+    transform-style: preserve-3d;
+    /* Set the gap between child elements */
+    gap: 10px;
+    /* Apply 3D rotation to the container */
+    transform: rotateY(30deg) rotateX(10deg);
+}
+
+/* Styles for the animated text elements */
+.text {
+    /* Relative positioning for child elements */
+    position: relative;
+    /* Set fixed width and height for each text element */
+    width: 100px;
+    height: 100px;
+    /* Apply 3D transformations to the text elements */
+    transform-style: preserve-3d;
+    /* Smooth transition with delay based on the variable --y */
+    transition: 2.5s ease-in-out;
+    transition-delay: calc(0.25s * var(--y));
+}
+
+/* Additional styles when the 'newyear' class is present on the container */
+.container.newyear .text {
+    transform: rotateX(calc(-360deg * 1));
+}
+
+.container.newyear .text:last-child {
+    transform: rotateX(calc(-630deg * 1));
+}
+
+/* Styles for the individual numbers within the text elements */
+.text span {
+    /* Absolute positioning within the text element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* Take up the full width and height of the text element */
+    width: 100%;
+    height: 100%;
+    /* Center the text horizontally and vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Text color, size, and background gradient */
+    color: #fff;
+    font-size: 4em;
+    /* Disable text selection cursor */
+    cursor: default;
+    background: linear-gradient(#a1a1a1, #a9a9a9);
+    /* Apply 3D transformations to the text */
+    transform-style: preserve-3d;
+    transform: rotateX(calc(90deg * var(--y))) translateZ(50px);
+}
+
+/* Pseudo-element for a left-side background of the text */
+.text::before {
+    /* Empty content for the pseudo-element */
+    content: '';
+    /* Absolute positioning covering the entire text element */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* Background color for the pseudo-element */
+    background: #7b7b7b;
+    /* Set the origin of the rotation to the left side */
+    transform-origin: left;
+    /* Apply 3D rotation to the pseudo-element */
+    transform: rotateY(90deg) translateX(-50px);
+}
+
+/* Additional styles for the last text element when the 'newyear' class is present */
+.text:last-child span {
+    background: linear-gradient(gold, teal);
+}
+
+/* Styles for the button element */
+button {
+    position: absolute;
+    bottom: 5%;
+    color: #fff;
+    font-size: 1.5em;
+    background-color: #011302; /* Button background color */
+    border: none;
+    padding: 15px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    font-family: 'Libre Baskerville', serif;
+    font-style: italic;
+    width: 40vw; /* Responsive width */
+}
+
+/* Additional styles for the button when it has the 'active' class */
+button.active {
+    background-color: #290213;
+    transform: scale(1.1);
+    color: #404040; /* Change text color in the 'active' state */
+}
+
+/* Pseudo-element for text after the button content */
+button::after {
+    content: 'Click on me for a special message :)';
+    transition: 0.5s;
+    font-family: 'Libre Baskerville', serif;
+}
+
+/* Additional styles for the pseudo-element when the button has the 'active' class */
+button.active::after {
+    content: 'Happy New Year!';
+    color: #fafafa;
+}
+
+/* Confetti container styles */
+.confetti-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* Confetti element styles */
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    border-radius: 50%;
+    opacity: 0;
+    animation: confettiAnimation 2s linear infinite;
+}
+
+/* Keyframes for confetti animation */
+@keyframes confettiAnimation {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(calc(100vh * var(--y))) translateX(calc(100vw * var(--x))) rotate(720deg);
+        opacity: 1;
+    }
+}
+
+/* Additional styles when the confetti animation is active */
+.confetti-container.active .confetti {
+    animation: confettiAnimationActive 2s ease-out forwards, confettiRotation 3s linear infinite;
+}
+
+/* Keyframes for confetti animation when active */
+@keyframes confettiAnimationActive {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(calc(100vh * var(--y))) translateX(calc(100vw * var(--x))) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* Keyframes for rotation animation */
+@keyframes confettiRotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
