@@ -1,0 +1,207 @@
+/* Importing PT Sans font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* Global styles */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'PT Sans', sans-serif;
+}
+
+/* Body styles */
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(rgb(53, 3, 11), rgba(9, 7, 22, 0.652));
+}
+
+/* Card container styles */
+.card{
+    position: relative;
+    width: 320px;
+    height: 450px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* Media query for smaller screens */
+@media (max-width: 767px) {
+    .card {
+        width: 100%;
+        max-width: 320px;
+    }
+}
+
+/* Gradient overlay animation on card hover */
+.card .poster::before{
+    content: '';
+    position: absolute;
+    bottom: -250px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgb(22, 22, 21) 50%, transparent);
+    transition: 0.5s;
+    z-index: 1;
+}
+
+.card:hover .poster::before{
+    bottom: 0px;
+}
+
+/* Poster container styles */
+.card .poster{
+    position: relative;
+    overflow: hidden;
+}
+
+/* Poster image styles with transition on hover */
+.card .poster img{
+    width: 100%;
+    transition: 0.5s;
+}
+
+.card:hover .poster img{
+    transform: translateY(-50px);
+    filter: blur(5px);
+}
+
+/* Details container styles with transition on hover */
+.card .details{
+    position: absolute;
+    bottom: -140px;
+    left: 0;
+    padding: 20px;
+    width: 100%;
+    z-index: 2;
+    transition: 0.5s;
+}
+
+.card:hover .details{
+    bottom: 40px;
+}
+
+/* Logo styles inside details */
+.card .details .logo{
+    max-width: 275px;
+}
+
+/* Heading styles inside details */
+.card .details h3{
+    font-size: 14px;
+    color: bisque;
+    text-align: center;
+}
+
+/* Rating styles inside details */
+.card .details .rating{
+    position: relative;
+    padding: 5px 0;
+    text-align: center;
+}
+
+.card .details .rating .fa-star{
+    color: #F7F406;
+    font-size: 1em;
+}
+
+.card .details .rating .fa-star-half-stroke{
+    color: #F7F406;
+    font-size: 1em;
+}
+
+.card .details .rating span{
+    color: bisque;
+    margin-left: 4px;
+}
+
+/* Tags styles inside details */
+.card .details .tags{
+    position: relative;
+    margin-top: 5px;
+    text-align: center;
+    font-size: small;
+}
+
+.card .details .tags span{
+    padding: 2px 5px;
+    color: bisque;
+    background: #021131;
+    border-radius: 4px;
+}
+
+.card .details .tags span:nth-child(2){
+    background: #082c1d;
+}
+
+.card .details .tags span:nth-child(3){
+    background: #1c0c24;
+}
+
+/* Info styles inside details */
+.card .details .info{
+    color: bisque;
+    margin-top: 30px;
+    text-align: center;
+    font-size: small;
+}
+
+/* Styling for the tooltip */
+.card .details .cast ul li span.tooltip {
+    position: absolute;
+    top: -40px;
+    background: palevioletred;
+    min-width: max-content;
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 40px hsla(0, 0%, 0%, 0.4);
+    transform: translateY(-10px);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.25s ease-in-out;
+    z-index: 1;
+}
+
+/* Styling for the UL */
+.card .details .cast ul {
+    position: relative;
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+/* Styling for the LI */
+.card .details .cast ul li {
+    list-style: none;
+    width: 35px;
+    height: 35px;
+    overflow: hidden;
+    border-radius: 25%;
+    border: 2px solid bisque;
+    position: relative; /* Important for positioning the tooltip */
+}
+
+/* Styling for the actor images inside LI */
+.card .details .cast ul li img {
+    max-width: 100%;
+}
+
+/* Styling for the actor names */
+.card .details .cast h4 {
+    color: rgb(255, 199, 17);
+    margin-top: 5px;
+    text-align: center;
+}
+
+/* CSS for the hover effect and showing the tooltip */
+.card .details .cast ul li:hover span.tooltip {
+    opacity: 1;
+    transform: translateY(0);
+}
