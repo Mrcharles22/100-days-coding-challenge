@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Set the character set and viewport for responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Set favicon -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/HNGx-icon">
+    
+    <!-- Set the title of the document -->
+    <title>Day 22 - Flip-On-Hover Card</title>
+
+    <!-- Import Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@100;200;300;400;500;600;700;800;900&family=Play:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Import the external stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Container for the flip-on-hover cards -->
+    <div class="box-container">
+        <!-- First flip-on-hover card -->
+        <div class="box-item">
+            <div class="flip-box">
+                <!-- Front face of the card with background image and content -->
+                <div class="flip-box-front text-center" style="background-image: url('imgs/Pep.jpeg');">
+                    <div class="inner color-white">
+                        <h3 class="flip-box-header">Pep Guardiola</h3>
+                        <p>Hover to read :)</p>
+                    </div>
+                </div>
+                <!-- Back face of the card with background image and additional content -->
+                <div class="flip-box-back text-center" style="background-image: url('imgs/Pep.jpeg');">
+                    <div class="inner color-white">
+                        <h3 class="flip-box-header"></h3>
+                        <p>"Pep Guardiola is a highly successful Spanish football manager and former player, born on January 18, 1971. 
+                            As a player, he excelled at FC Barcelona. In his managerial career, Guardiola achieved remarkable success with Barcelona, winning numerous domestic and international titles."</p>
+                        <button class="flip-box-button">Say "PEP"</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Second flip-on-hover card -->
+        <div class="box-item">
+            <div class="flip-box">
+                <div class="flip-box-front text-center" style="background-image: url('imgs/Kevin\ De\ Bruyne.jpeg');">
+                    <div class="inner color-white">
+                        <h3 class="flip-box-header">KDB</h3>
+                        <p>Hover to read :)</p>
+                    </div>
+                </div>
+                <div class="flip-box-back text-center" style="background-image: url('imgs/Kevin\ De\ Bruyne.jpeg');">
+                    <div class="inner color-white">
+                        <h3 class="flip-box-header"></h3>
+                        <p>"Kevin De Bruyne, born on June 28, 1991, in Belgium, is a highly regarded professional footballer known for his exceptional skills and versatility. Primarily playing as a midfielder, De Bruyne has achieved prominence for his time with Manchester City in the English Premier League.."</p>
+                        <button class="flip-box-button">Say "KDB"</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Third flip-on-hover card -->
+        <div class="box-item">
+            <div class="flip-box">
+                <div class="flip-box-front text-center filter-" style="background-image: url('imgs/Sergio\ Agüero.jpeg');">
+                    <div class="inner color-white">
+                        <h3 class="flip-box-header">AGUERO</h3>
+                        <p>Hover to read :)</p>
+                    </div>
+                </div>
+                <div class="flip-box-back text-center" style="background-image: url('imgs/Sergio\ Agüero.jpeg');">
+                    <div class="inner color-white">
+                        <h3 class="flip-box-header"></h3>
+                        <p>"
+                            Sergio Agüero, born on June 2, 1988, in Buenos Aires, Argentina, is a retired professional footballer renowned for his prolific goal-scoring abilities. Primarily playing as a striker, Agüero enjoyed a stellar career, 
+                            with a significant portion spent at Manchester City in the English Premier League."</p>
+                        <button class="flip-box-button">Say "AGUERO"</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Import Font Awesome library -->
+    <script src="https://kit.fontawesome.com/08d9b1877f.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
